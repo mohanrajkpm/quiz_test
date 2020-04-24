@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sample Quiz</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- import ajax google api -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- import handlebar template -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- import bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    
+    <!-- import local js script file -->
+    <script src="main.js"></script>
+  </head>
+
+  <body>
+    <span id="dialog"></span>
+    <button type="button" id="loadme" onclick="load_data()" class="pull-right btn btn-primary">
+      Load data
+    </button>
+    <div id="div1" class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Url</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody id="table-data"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+<script id="site-listing-template" type="text/x-handlebars-template">
+  {{#each sites}}
+    <tr>
+      <td>
+        {{this.id}}
+      </td>
+      <td>
+        {{this.url}}
+      </td>
+      <td>
+        {{this.name}}
+      </td>
+    </tr>
+  {{/each}}
+</script>
